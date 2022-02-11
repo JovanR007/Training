@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,6 +18,21 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +45,19 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     TestErrorsComponent,
     MemberCardComponent,
     MemberListComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent,
+    PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
+    ListsComponent,
+    MessagesComponent,
+    MemberMessagesComponent,
+    AdminPanelComponent,
+    UserManagementComponent,
+    PhotoManagementComponent,
+    HasRoleDirective,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +65,16 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,   
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule,
+    ReactiveFormsModule
 
   ],
   providers: [   
       {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-      {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-      {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+      {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+      {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+
   
   ],
   bootstrap: [AppComponent],
