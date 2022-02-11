@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Training\\API\\API.csproj": {}
+    "D:\\Training\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Training\\API\\API.csproj": {
+    "D:\\Training\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Training\\API\\API.csproj",
+        "projectUniqueName": "D:\\Training\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Training\\API\\API.csproj",
+        "projectPath": "D:\\Training\\api\\API.csproj",
         "packagesPath": "C:\\Users\\jovan\\.nuget\\packages\\",
-        "outputPath": "D:\\Training\\API\\obj\\",
+        "outputPath": "D:\\Training\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jovan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,15 +52,27 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
